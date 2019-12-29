@@ -20,7 +20,7 @@ export class SurveysService {
   }
 
   async update(surveyId, updateSurveyDto: CreateSurveyDTO): Promise<Survey> {
-    return await this.surveyModel.findOneAndUpdate(surveyId, updateSurveyDto);
+    return await this.surveyModel.findOneAndUpdate({_id: surveyId}, updateSurveyDto);
   }
 
   async readAll(): Promise<Survey[]> {
